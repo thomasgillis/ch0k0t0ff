@@ -21,7 +21,7 @@ $(TAR_DIR)/$(H3LPR_DIR).tar.gz: | $(TAR_DIR)
 ifdef H3LPR_VER
 	cd $(TAR_DIR) &&  \
 	rm -rf $(H3LPR_DIR) && \
-	git clone https://github.com/vanreeslab/h3lpr.git && \
+	git clone git@github.com:van-Rees-Lab/h3lpr.git && \
 	mv h3lpr $(H3LPR_DIR) && \
 	cd $(H3LPR_DIR) && \
 	git checkout $(H3LPR_VER) && \
