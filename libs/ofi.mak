@@ -6,6 +6,11 @@ ofi_dep = zlib
 #ofi_opt = --disable-usnic --disable-sockets
 ofi_opt = $(OFI_MISC_OPTS)
 
+# compile with CUDA support
+ifdef CUDA_DIR
+ofi_opt += --with-cuda=$(CUDA_DIR)
+endif
+
 # if we have a GIT branch, use it
 ifneq ($(strip $OFI_GIT),)
 ofi_repo = $(OFI_REPO)

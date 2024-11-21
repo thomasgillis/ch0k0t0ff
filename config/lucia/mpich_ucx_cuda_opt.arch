@@ -1,0 +1,26 @@
+#===============================================================================
+# GENERAL PARAMETERS
+FC = gfortran
+CC = gcc
+CXX = g++
+
+BUILD_DIR = /gpfs/scratch/acad/examples/poncelet
+TAR_DIR = $(HOME)/soft/tar_storage
+PREFIX = $(HOME)/soft/lib-MPICH-4.2.3-UCX-1.17.0-CUDA-12.2.0-opt
+
+define MODULE_LIST
+module load EasyBuild/2023a
+module load CUDA/12.2.0
+module load GCC/12.3.0
+module load GDRCopy/2.3.1-GCCcore-12.3.0.lua
+endef
+
+#===============================================================================
+CUDA_DIR = $(EBROOTCUDA)
+UCX_VER = 1.17.0
+UCX_MISC_OPTS = --with-gdrcopy
+MPICH_VER = 4.2.3
+MPICH_MISC_OPTS = --enable-fast=O3,ndebug,alwaysinline
+H3LPR_VER = main
+
+#end of life

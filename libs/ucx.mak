@@ -3,13 +3,21 @@
 # dependency list
 ucx_dep = zlib
 
+# options
+ucx_opt = $(UCX_MISC_OPTS)
+
+# compile with CUDA support
+ifdef CUDA_DIR
+ucx_opt += --with-cuda=$(CUDA_DIR)
+endif
+
 define ucx_template_opt
 	target="ucx" \
 	target_ver="$(UCX_VER)" \
 	target_dep="$(ucx_dep)" \
 	target_url="https://github.com/openucx/ucx/releases/download/v$(UCX_VER)/ucx-$(UCX_VER).tar.gz" \
 	target_confcmd="CC=$(CC) CXX=$(CXX) FC=$(FC) F77=$(FC) ./contrib/configure-release --prefix=${PREFIX}" \
-	target_confopt="--enable-optimizations --enable-cma --enable-mt"
+	target_confopt="--enable-optimizations --enable-cma --enable-mt $(ucx_opt)"
 endef
 
 #===============================================================================

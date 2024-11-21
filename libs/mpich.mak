@@ -4,6 +4,11 @@ mpich_opt ?=
 mpich_opt += ${MPICH_MISC_OPTS}
 #mpich_opt += --disable-fortran ${MPICH_MISC_OPTS}
 
+# compile with CUDA support
+ifdef CUDA_DIR
+mpich_opt += --with-cuda=$(CUDA_DIR)
+endif
+
 # ------------  UCX ------------
 ifdef UCX_VER
 mpich_opt += --with-device=ch4:ucx

@@ -1,9 +1,16 @@
 # # build recipe for osu
 #-------------------------------------------------------------------------------
+osu_opt ?=
+osu_opt += ${OSU_MISC_OPTS}
+
+# compile with CUDA support
+ifdef CUDA_DIR
+osu_opt += --enable-cuda --with-cuda=$(CUDA_DIR)
+endif
+
+#-------------------------------------------------------------------------------
 # dependency list
 osu_dep = mpi
-
-osu_opt = ${OSU_MISC_OPTS}
 
 define osu_template_opt
 	target="osu" \
