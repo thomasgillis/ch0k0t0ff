@@ -1,0 +1,31 @@
+#===============================================================================
+# GENERAL PARAMETERS
+CC = gcc
+CXX = g++
+FC = gfortran
+DBS_MPICC = mpicc
+DBS_MPICXX = mpicxx
+DBS_MPIFORT = mpifort
+
+BUILD_DIR = $(HOME)/build-dbs-yoda
+TAR_DIR = $(HOME)/tarstorage-dbs-yoda
+PREFIX = $(HOME)/lib-dbs-yoda
+
+define MODULE_LIST
+module load OpenMPI/4.1.5-GCC-12.3.0 HDF5/1.12.1-gompi-2022.05 FFTW
+endef
+
+#===============================================================================
+# LIBRARIES
+
+PETSC_VER = 3.21.3
+
+OBLAS_VER = 0.3.24
+
+P4EST_VER = 2.8
+
+FLUPS_VER = main
+FLUPS_FFTW_DIR = ${EBROOTFFTW}
+FLUPS_HDF5_DIR = ${EBROOTHDF5}
+
+H3LPR_VER = develop

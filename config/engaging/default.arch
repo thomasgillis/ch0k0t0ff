@@ -5,13 +5,15 @@ CXX = g++
 
 BUILD_DIR := /pool001/$(shell whoami)
 TAR_DIR := $(HOME)/tar-storage
-PREFIX := $(HOME)/ompi-4.1.3-ucx-1.12.1-ofi-1.14.0
+PREFIX := $(HOME)/lib-dbs-engaging
 
 define MODULE_LIST
 gcc/11.2.0
+zlib
 endef
 
 #===============================================================================
+# everything turned on
 UCX_VER = 1.12.1
 OFI_VER = 1.14.0
 OMPI_VER = 4.1.3
@@ -20,10 +22,12 @@ OBLAS_VER = 0.3.18
 P4EST_VER = 2.8
 FFTW_VER = 3.3.10
 LIBXML2_VER = 2.9.13
-ZLIB_VER = 1.2.12
 HWLOC_VER = 2.7.1
 LIBEVENT_VER= 2.1.12
 PMIX_VER = 4.1.2
-FLUPS_VER = dev-node-centered
-PETSC_VER = 3.17.0
+FLUPS_VER = main
+
+PETSC_VER = 3.21.5
+
 HYPRE_VER = 2.24.0
+H3LPR_VER = develop

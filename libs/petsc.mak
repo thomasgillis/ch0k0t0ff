@@ -47,7 +47,7 @@ define petsc_template_opt
 	target="petsc" \
 	target_ver="$(PETSC_VER)" \
 	target_dep="$(petsc_dep)" \
-	target_url="https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-$(PETSC_VER).tar.gz" \
+	target_url="https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-$(PETSC_VER).tar.gz" \
 	target_confcmd="./configure --prefix=${PREFIX}"\
 	target_confopt="$(petsc_opt)" \
 	target_installcmd="$(MAKE) all -j8 && make install"

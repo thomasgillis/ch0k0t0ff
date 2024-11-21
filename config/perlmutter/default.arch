@@ -1,7 +1,7 @@
 #===============================================================================
 # GENERAL PARAMETERS
-CC = gcc
-CXX = g++
+CXX = mpic++
+CC = mpicc
 FC = gfortran
 DBS_MPICC = cc
 DBS_MPICXX = CC
@@ -30,7 +30,7 @@ endef
 # FFTW_VER = 3.3.10
 
 # provided by e4s-22.11 (versions updated Oct. 18th 2023)
-# PETSC_VER = 3.18.1
+# PETSC_VER = 3.21.3
 # HYPRE_VER = 2.26.0
 
 # OpenBLAS has a Cray FORTRAN compiler bug in 0.3.21, use a later version
@@ -38,8 +38,8 @@ OBLAS_VER = 0.3.24
 
 # in-house libs (compiled)
 P4EST_VER = 2.8
-FLUPS_VER = develop
+FLUPS_VER = main
 FLUPS_FFTW_DIR = ${FFTW_ROOT}
 FLUPS_HDF5_DIR = ${HDF5_ROOT}
-H3LPR_VER = main
+H3LPR_VER = develop
 
